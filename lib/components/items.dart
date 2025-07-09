@@ -55,7 +55,7 @@ class Item extends StatelessWidget {
               child: Row(children: [
                 GestureDetector(
                   onTap: () {
-                    debugPrint("sound is playing");
+                    // debugPrint("sound is playing");
                   },
                   child: const Icon(
                     Icons.play_arrow,

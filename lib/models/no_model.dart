@@ -6,3 +6,9 @@ class Number {
 
   Number({required this.imagePath, required this.jpText, required this.enText});
 }
+
+// class family {
+//   final String;
+
+
+// }

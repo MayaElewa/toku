@@ -75,30 +75,11 @@ class Numbers extends StatelessWidget {
         body: ListView.builder(
           itemCount: numbers1.length,
           itemBuilder: (context, num) {
-            return Item(no_model: numbers1[num]);
+            return Item(
+              no_model: numbers1[num], familymodel: null,
+              //color: Colors.red,
+            );
           },
-        )
-
-        // [
-        //   Item(no_model: numbers1[0]),
-        //   Item(no_model: numbers1[1]),
-        //   Item(no_model: numbers1[2]),
-        //   Item(no_model: numbers1[3]),
-        //   Item(no_model: numbers1[4]),
-        //   Item(no_model: numbers1[5]),
-        //   Item(no_model: numbers1[6]),
-        //   Item(no_model: numbers1[7]),
-        //   Item(no_model: numbers1[8]),
-        //   Item(no_model: numbers1[9])
-        // ]),
-        );
+        ));
   }
-
-  // List<Item> getList(List<Number> numbers1) {
-  //   List<Item> itemslist = [];
-  //   for (int i = 0; i < numbers1.length; i++) {
-  //     itemslist.add(Item(no_model: numbers1[i]));
-  //   }
-  //   return itemslist;
-  // }
 }

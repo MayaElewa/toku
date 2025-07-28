@@ -1,85 +1,103 @@
 import 'package:chatapp/components/items.dart';
-import 'package:chatapp/models/no_model.dart';
+import 'package:chatapp/components/list_item.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter/lib/components/items.dart';
+import 'package:audioplayers/audioplayers.dart';
 
-//import 'package:toku/models/no_model.dart';
+class NumbersPage extends StatelessWidget {
+  const NumbersPage({Key? key}) : super(key: key);
 
-class Numbers extends StatelessWidget {
-  Numbers({Key? key}) : super(key: key);
-  final List<Number> numbers1 = [
-    Number(
-        imagePath: "images/numbers/number_one.png",
-        jpText: "ichi",
-        enText: "one"),
-    Number(
-        imagePath: "images/numbers/number_two.png",
-        jpText: "ni",
-        enText: "TWO"),
-    Number(
-        imagePath: "images/numbers/number_three.png",
-        jpText: "san",
-        enText: "THREE"),
-    Number(
-        imagePath: "images/numbers/number_four.png",
-        jpText: "yon / shi",
-        enText: "FOUR"),
-    Number(
-        imagePath: 'images/numbers/number_five.png',
-        jpText: "go",
-        enText: "FIVE"),
-    Number(
-        imagePath: "images/numbers/number_six.png",
-        jpText: "roku",
-        enText: "SIX"),
-    Number(
-        imagePath: "images/numbers/number_seven.png",
-        jpText: "	nana / shichi",
-        enText: "SEVEN"),
-    Number(
-        imagePath: "images/numbers/number_eight.png",
-        jpText: "hachi",
-        enText: "eight"),
-    Number(
-        imagePath: "images/numbers/number_nine.png",
-        jpText: "kyuu / ku",
-        enText: "nine"),
-    Number(
-        imagePath: "images/numbers/number_ten.png",
-        jpText: "juu",
-        enText: "TEN"),
+  final List<ItemModel> numbers = const [
+    ItemModel(
+      sound: 'sounds/numbers/number_one_sound.mp3',
+      jpName: 'ichi',
+      enName: 'one',
+      image: 'images/numbers/number_one.png',
+    ),
+    ItemModel(
+      sound: 'sounds/numbers/number_two_sound.mp3',
+      jpName: 'Ni',
+      enName: 'two',
+      image: 'images/numbers/number_two.png',
+    ),
+    ItemModel(
+      sound: 'sounds/numbers/number_three_sound.mp3',
+      jpName: 'San',
+      enName: 'three',
+      image: 'images/numbers/number_three.png',
+    ),
+    ItemModel(
+      sound: 'sounds/numbers/number_four_sound.mp3',
+      jpName: 'Shi',
+      enName: 'four',
+      image: 'images/numbers/number_four.png',
+    ),
+    ItemModel(
+      sound: 'sounds/numbers/number_five_sound.mp3',
+      jpName: 'Go',
+      enName: 'five',
+      image: 'images/numbers/number_five.png',
+    ),
+    ItemModel(
+      sound: 'sounds/numbers/number_six_sound.mp3',
+      jpName: 'Roku',
+      enName: 'six',
+      image: 'images/numbers/number_six.png',
+    ),
+    ItemModel(
+      sound: 'sounds/numbers/number_seven_sound.mp3',
+      jpName: 'Sebun',
+      enName: 'seven',
+      image: 'images/numbers/number_seven.png',
+    ),
+    ItemModel(
+      sound: 'sounds/numbers/number_eight_sound.mp3',
+      jpName: 'hachi',
+      enName: 'eight',
+      image: 'images/numbers/number_eight.png',
+    ),
+    ItemModel(
+      sound: 'sounds/numbers/number_nine_sound.mp3',
+      jpName: 'Kyū',
+      enName: 'nine',
+      image: 'images/numbers/number_nine.png',
+    ),
+    ItemModel(
+      sound: 'sounds/numbers/number_ten_sound.mp3',
+      jpName: 'Jū',
+      enName: 'ten',
+      image: 'images/numbers/number_ten.png',
+    ),
   ];
-
-  // final String? text;
-  // final Color? color;
-  // final Number one = Number(
-  //     imagePath: "images/numbers/number_one.png",
-  //     jpText: "ichi",
-  //     enText: "one");
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("Numbers",
-              style: TextStyle(
-                color: Color.fromARGB(255, 255, 255, 255),
-                fontSize: 25,
-              )),
-          backgroundColor: const Color.fromARGB(255, 83, 52, 15),
-        ),
-        // body: ListView(
-        //   children:getList(numbers1),
-        // ),
-
-        body: ListView.builder(
-          itemCount: numbers1.length,
-          itemBuilder: (context, num) {
-            return Item(
-              no_model: numbers1[num], familymodel: null,
-              //color: Colors.red,
-            );
-          },
-        ));
+      appBar: AppBar(
+        title: const Text('Numbers'),
+        backgroundColor: const Color(0xff46322B),
+      ),
+      body: ListView.builder(
+        itemCount: numbers.length,
+        itemBuilder: (context, index) {
+          return ListItem(
+            color: const Color(0xffEF9235),
+            item: numbers[index],
+          );
+        },
+      ),
+    );
   }
+
+  // List<Widget> getList(List<Number> numbers) {
+  //   List<Widget> itemsList = [];
+  //   for (int i = 0; i < numbers.length; i++) {
+  //     itemsList.add(
+  //       ListItem(
+  //         number: numbers[i],
+  //       ),
+  //     );
+  //   }
+
+  //   return itemsList;
+  // }
 }

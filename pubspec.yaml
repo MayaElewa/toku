@@ -16,6 +16,8 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
+
+#C:\Users\Sales-75\Desktop\flutterproject\toku\toku
 version: 1.0.0+1
 
 environment:
@@ -62,15 +64,22 @@ flutter:
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
- # uses-material-design: true
+  uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
   assets:
     - images/numbers/
     - images/family_members/
+    - images/colors/
+    - images/
     - sounds/colors/black.wav
-    - assets/sounds/colors/
+    - assets/sounds/
     - assets/sounds/numbers/
+    - assets/sounds/colors/
+    - assets/sounds/family_members/
+    
+    #- assets/sounds/numbers/
+
 
     # - toku/images/numbers/number_two.png
     # - toku/images/numbers/number_three.png

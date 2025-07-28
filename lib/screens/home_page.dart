@@ -7,8 +7,11 @@ import 'package:flutter/material.dart';
 // import 'package:toku/screens/numbers.dart';
 // import 'package:toku/screens/colors.dart';
 // import 'package:toku/screens/phrases.dart';
+import 'package:chatapp/screens/Family.dart';
+
 import 'package:chatapp/screens/Colors.dart' as my_colors;
 import 'package:chatapp/screens/Phrases.dart';
+import "package:chatapp/models/phrasemodel.dart";
 
 class Homepage extends StatelessWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -35,11 +38,13 @@ class Homepage extends StatelessWidget {
             onTap: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (BuildContext context) {
-                return Numbers();
+                return const NumbersPage();
                 //  Image.asset(
                 //   "images/numbers/number_eight.png",
                 // );
-              }));
+              }
+            )
+          );
               //    print("tapped on Numbers");
             },
             text: "Numbers",
@@ -50,7 +55,7 @@ class Homepage extends StatelessWidget {
             onTap: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (BuildContext context) {
-                return const my_colors.Colors();
+                return const my_colors.ColorPage();
               }));
               // onTap:
               // onTap;
@@ -74,7 +79,7 @@ class Homepage extends StatelessWidget {
             onTap: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (BuildContext context) {
-                return Family_page();
+                return const FamilyMembersPage();
                 //  Image.asset(
                 //   "images/numbers/number_eight.png",
                 // );
@@ -82,7 +87,7 @@ class Homepage extends StatelessWidget {
               //    print("tapped on Numbers");
             },
             text: "family",
-            color: Color.fromARGB(255, 241, 109, 213),
+            color: const Color.fromARGB(255, 241, 109, 213),
           ),
         ],
       ),

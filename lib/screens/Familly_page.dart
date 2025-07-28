@@ -1,74 +1,102 @@
+import 'package:chatapp/components/items.dart';
+import 'package:chatapp/components/list_item.dart';
 import 'package:flutter/material.dart';
-import 'package:chatapp/models/Familymodel.dart';
 
-class Family_page extends StatelessWidget {
-  Family_page({Key? key}) : super(key: key);
+class FamilyMembersPage extends StatelessWidget {
+  const FamilyMembersPage({Key? key}) : super(key: key);
 
-  
-  final List<Family> Family1 = [
-    Family(
-        imagePath: "images/family_members/family_daughter.png",
-        jpText: "musume",
-        enText: "daughter"),
-    Family(
-        imagePath: "images/family_members/family_father.png",
-        jpText: "chichi / otōsan",
-        enText: "father"),
-    Family(
-        imagePath: "images/family_members/family_grandfather.png",
-        jpText: "sofu / ojīsan",
-        enText: "grandfather"),
-    Family(
-        imagePath: "images/family_members/family_grandmother.png",
-        jpText: "sobo / obāsan",
-        enText: "grandmother"),
-    Family(
-        imagePath: 'images/family_members/family_mother.png',
-        jpText: "haha / okāsan",
-        enText: "mother"),
-    Family(
-        imagePath: "images/family_members/family_older_brother.png",
-        jpText: "ani / onīsan",
-        enText: "older brother"),
-    Family(
-        imagePath: "images/family_members/family_older_sister.png",
-        jpText: "	ane / onēsan",
-        enText: "older sister"),
-    Family(
-        imagePath: "images/family_members/family_son.png",
-        jpText: "musuko",
-        enText: "SON"),
-    Family(
-        imagePath: "images/family_members/family_younger_brother.png",
-        jpText: "otōto",
-        enText: "younger_brother"),
-    Family(
-        imagePath: "images/family_members/family_younger_sister.png",
-        jpText: "imōto",
-        enText: "younger_sister"),
+  final List<ItemModel> Family1 = const [
+    ItemModel(
+      sound: 'sounds/family_members/father.wav',
+      jpName: 'otōsan',
+      enName: 'father',
+      image: 'images/family_members/family_father.png',
+    ),
+    ItemModel(
+      sound: 'sounds/family_members/mother.wav',
+      jpName: 'okāsan',
+      enName: 'mother',
+      image: 'images/family_members/family_mother.png',
+    ),
+    ItemModel(
+      sound: 'sounds/family_members/daughter.wav',
+      jpName: 'musume-san',
+      enName: 'daughter',
+      image: 'images/family_members/family_daughter.png',
+    ),
+    ItemModel(
+      sound: 'sounds/family_members/son.wav',
+      jpName: 'musuko-san',
+      enName: 'son',
+      image: 'images/family_members/family_son.png',
+    ),
+    ItemModel(
+      sound: 'sounds/family_members/olderbother.wav',
+      jpName: 'onīsan',
+      enName: 'older brother',
+      image: 'images/family_members/family_older_brother.png',
+    ),
+    ItemModel(
+      sound: 'sounds/family_members/youngerbrohter.wav',
+      jpName: 'otōto-san',
+      enName: 'younger brother',
+      image: 'images/family_members/family_younger_brother.png',
+    ),
+    ItemModel(
+      sound: 'sounds/family_members/oldersister.wav',
+      jpName: 'onēsan',
+      enName: 'older sister',
+      image: 'images/family_members/family_older_sister.png',
+    ),
+    ItemModel(
+      sound: 'sounds/family_members/youngersister.wav',
+      jpName: 'imōto-san',
+      enName: 'younger sister',
+      image: 'images/family_members/family_younger_sister.png',
+    ),
+    ItemModel(
+      sound: 'sounds/family_members/grandmother.wav',
+      jpName: 'obāsan',
+      enName: 'grand mother',
+      image: 'images/family_members/family_grandmother.png',
+    ),
+    ItemModel(
+      sound: 'sounds/family_members/grandfather.wav',
+      jpName: 'ojīsan',
+      enName: 'grand father',
+      image: 'images/family_members/family_grandfather.png',
+    ),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Family Members"),
-        backgroundColor: Color(0xff694228),
+        title: const Text('Family Members'),
+        backgroundColor: const Color(0xff46322B),
       ),
       body: ListView.builder(
         itemCount: Family1.length,
         itemBuilder: (context, index) {
-          final item = Family1[index];
-          return Card(
-            child: ListTile(
-              leading: Image.asset(item.imagePath ?? ""),
-              title: Text(item.enText ?? ""),
-              subtitle: Text(item.jpText ?? ""),
-            ),
+          return ListItem(
+            color: const Color(0xff558B37),
+            item: Family1[index],
           );
         },
       ),
-
-      
     );
   }
+
+  // List<Widget> getList(List<Number> Family1) {
+  //   List<Widget> itemsList = [];
+  //   for (int i = 0; i < Family1.length; i++) {
+  //     itemsList.add(
+  //       ListItem(
+  //         number: Family1[i],
+  //       ),
+  //     );
+  //   }
+
+  //   return itemsList;
+  // }
 }
